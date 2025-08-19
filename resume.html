@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이승민 - Frontend Developer 이력서</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 20px;
+        }
+        
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e40af;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .profile {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .profile p {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        
+        .skill-category h4 {
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-item {
+            background: #2563eb;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .experience-item, .project-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .experience-item:last-child, .project-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .item-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .item-company {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+        
+        .item-period {
+            font-size: 12px;
+            color: #94a3b8;
+            white-space: nowrap;
+        }
+        
+        .item-description {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #475569;
+        }
+        
+        .item-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+        
+        .tech-tag {
+            background: #e2e8f0;
+            color: #475569;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+        }
+        
+        .achievements {
+            list-style: none;
+        }
+        
+        .achievements li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+            font-size: 13px;
+            color: #475569;
+        }
+        
+        .achievements li:before {
+            content: "•";
+            color: #2563eb;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .project-links {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        
+        .project-links a {
+            color: #2563eb;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media print {
+            body {
+                font-size: 12px;
+            }
+            
+            .container {
+                max-width: none;
+                margin: 0;
+                padding: 15mm;
+                box-shadow: none;
+            }
+            
+            .name {
+                font-size: 28px;
+            }
+            
+            .title {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 16px;
+            }
+            
+            .item-title {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <div class="header">
+            <h1 class="name">이승민 (Lee SeungMin / 李承珉)</h1>
+            <p class="title">Frontend Developer</p>
+            <div class="contact-info">
+                <span>Email: lsm122500@naver.com</span>
+                <span>Phone: 010-2353-2572</span>
+                <span>Address: 광주 광역시 광산구 장덕동</span>
+                <span>GitHub: github.com/Leesseung</span>
+            </div>
+        </div>
+
+        <!-- 자기소개 -->
+        <div class="section">
+            <h2 class="section-title">자기소개</h2>
+            <div class="profile">
+                <p>사용자 중심의 웹 애플리케이션 개발에 열정을 가진 프론트엔드 개발자입니다. Vue.js, React 등 최신 프론트엔드 기술을 활용하여 직관적이고 효율적인 웹 서비스를 개발하고 있습니다.</p>
+                <p>다양한 팀 프로젝트와 협업 경험을 통해 소통 능력과 문제 해결 능력을 기르고, 지속적인 학습을 통해 최신 기술 트렌드를 파악하고 적용하는 것에 관심을 가지고 있습니다. 특히 AI 기술과의 융합에 관심이 많아 관련 프로젝트를 진행하며 실무 역량을 키우고 있습니다.</p>
+            </div>
+        </div>
+
+        <!-- 기술 스택 -->
+        <div class="section">
+            <h2 class="section-title">기술 스택</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Frontend</h4>
+                    <div class="skill-list">
+                        <span class="skill-item">Vue.js</span>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">TypeScript</span>
+                        <span class="skill-item">Tailwind CSS</span>
+                        <span class="skill-item">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend</h4>
+                    <div class="skill-list">
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Django</span>
+                        <span class="skill-item">MySQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Others</h4>
+                    <div class="skill-list">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">Figma</span>
+                        <span class="skill-item">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 주요 프로젝트 -->
+        <div class="section">
+            <h2 class="section-title">주요 프로젝트</h2>
+            
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">EduMeet - AI 기반 교육 플랫폼</h3>
+                        <p class="item-company">SSAFY 2학기 팀 프로젝트</p>
+                    </div>
+                    <span class="item-period">2025.06 - 2025.08</span>
+                </div>
+                <p class="item-description">LiveKit 기반 실시간 화상 회의와 AI 자막, 음성 녹화 기능을 제공하는 차세대 교육 플랫폼입니다. 20명 동시 접속을 지원하며 한국어 85% 이상 정확도의 AI 자막 시스템을 구현했습니다.</p>
+                <div class="item-tech">
+                    <span class="tech-tag">Vue.js 3</span>
+                    <span class="tech-tag">LiveKit</span>
+                    <span class="tech-tag">Web Speech API</span>
+                    <span class="tech-tag">Pinia</span>
+                    <span class="tech-tag">Bootstrap 5</span>
+                    <span class="tech-tag">node.js</span>
+
+                </div>
+                <ul class="achievements">
+                    <li>LiveKit 기반 실시간 화상 통화 시스템 구축</li>
+                    <li>Web Speech API를 활용한 실시간 자막 시스템 개발</li>
+                    <li>음성 녹화 및 AI 요약 기능 구현</li>
+                    <li>모바일/태블릿/데스크톱 완벽 지원하는 반응형 UI</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/Leesseung/edumeet.git" target="_blank">GitHub</a>
+                    <a href="http://i13c205.p.ssafy.io/" target="_blank">Live Demo</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">편리한 금융을 위한 프로젝트</h3>
+                        <p class="item-company">SSAFY 1학기 팀 프로젝트</p>
+                    </div>
+                    <span class="item-period">2025.05</span>
+                </div>
+                <p class="item-description">예금·적금 상품 비교·추천 플랫폼과 OpenAI 기반 개인화 금융 챗봇 서비스입니다. 팀장으로서 전체 개발 과정을 주도하며 Full Stack 개발을 담당했습니다.</p>
+                <div class="item-tech">
+                    <span class="tech-tag">Vue.js 3</span>
+                    <span class="tech-tag">Django REST Framework</span>
+                    <span class="tech-tag">OpenAI GPT-4</span>
+                    <span class="tech-tag">SQLite/PostgreSQL</span>
+                    <span class="tech-tag">JWT</span>
+                </div>
+                <ul class="achievements">
+                    <li>금융 상품 API 연동 및 데이터 처리</li>
+                    <li>OpenAI GPT-4 기반 개인화 챗봇 구현</li>
+                    <li>대댓글 트리 구조의 커뮤니티 시스템 개발</li>
+                    <li>사용자 인증 및 프로필 관리 시스템</li>
+                    <li>kakao map api 연동</li>
+
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/Leesseung/-pjt" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">IoT 자율 주행 지팡이</h3>
+                        <p class="item-company">호남대학교 졸업작품</p>
+                    </div>
+                    <span class="item-period">2024.06 - 2024.12</span>
+                </div>
+                <p class="item-description">시각 장애인을 위한 IoT 기반 자율 주행 지팡이 시스템입니다. Arduino, 다양한 센서, 모터 제어 시스템을 활용하여 실제 사용 가능한 IoT 기기를 개발했습니다.</p>
+                <div class="item-tech">
+                    <span class="tech-tag">Arduino</span>
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">라즈베리파이 4</span>
+                    <span class="tech-tag">IoT</span>
+                    <span class="tech-tag">센서 기술</span>
+                </div>
+                <ul class="achievements">
+                    <li>초음파 센서 기반 장애물 감지 시스템 완성</li>
+                    <li>자율 주행 알고리즘을 통한 안전한 경로 탐색</li>
+                    <li>시각 장애인 사용자 테스트를 통한 기능 검증</li>
+                    <li>졸업 프로젝트 장려상 수상</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">개발자 포트폴리오 웹사이트</h3>
+                        <p class="item-company">개인 프로젝트</p>
+                    </div>
+                    <span class="item-period">2025.08 - 현재</span>
+                </div>
+                <p class="item-description">Vue.js 3와 Tailwind CSS를 활용한 반응형 개발자 포트폴리오 웹사이트입니다. 다크모드 지원 및 부드러운 애니메이션 효과를 구현했습니다.</p>
+                <div class="item-tech">
+                    <span class="tech-tag">Vue.js 3</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Pinia</span>
+                    <span class="tech-tag">Vue Router</span>
+                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <ul class="achievements">
+                    <li>Vue.js 3 Composition API를 활용한 모던 프론트엔드 개발</li>
+                    <li>Tailwind CSS를 활용한 반응형 디자인 구현</li>
+                    <li>다크모드 지원 및 사용자 경험 최적화</li>
+                    <li>GitHub Pages를 통한 무료 호스팅 및 배포</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/Leesseung/portfolio" target="_blank">GitHub</a>
+                    <a href="https://leesseung.github.io/portfolio" target="_blank">Live Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 경력 및 활동 -->
+        <div class="section">
+            <h2 class="section-title">경력 및 활동</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">SSAFY (삼성 청년 SW 아카데미)</h3>
+                        <p class="item-company">교육생</p>
+                    </div>
+                    <span class="item-period">2025.01 - 현재</span>
+                </div>
+                <p class="item-description">삼성에서 운영하는 1년 과정의 소프트웨어 개발자 양성 부트캠프에서 Vue.js, React, TypeScript, Django, Node.js, Spring Boot, Java, Python 등 최신 웹 기술을 학습하고 있습니다. 실무 중심의 프로젝트 기반 학습을 통해 실제 개발 역량을 기르고 있습니다.</p>
+                <div class="item-tech">
+                    <span class="tech-tag">Vue.js</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Spring Boot</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">MySQL</span>
+                </div>
+                <ul class="achievements">
+                    <li>1학기 수료 (2025.01 - 2025.06): Vue.js, React, TypeScript, Django, Node.js 학습</li>
+                    <li>2학기 진행 중 (2025.07 - 현재): Spring Boot, Java, AWS, Docker 학습</li>
+                    <li>팀 프로젝트를 통한 협업 및 소통 능력 향상</li>
+                    <li>실무 중심의 프로젝트 기반 학습으로 실제 개발 역량 습득</li>
+                    <li>AI/ML 기초 지식 학습 및 최신 기술 트렌드 파악</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">PAS팀 베트남 해외 교육 봉사</h3>
+                        <p class="item-company">기획 부팀장</p>
+                    </div>
+                    <span class="item-period">2024.05 - 2024.08</span>
+                </div>
+                <p class="item-description">아시아태평양 협회 주관으로 베트남 현지 대학생 교육 봉사 활동을 진행했습니다. 20명 규모의 대규모 팀에서 기획 부팀장으로 활동하며 조직 관리 및 국제 협업 경험을 쌓았습니다.</p>
+                <div class="item-tech">
+                    <span class="tech-tag">프로젝트 기획</span>
+                    <span class="tech-tag">팀 관리</span>
+                    <span class="tech-tag">국제 협력</span>
+                    <span class="tech-tag">교육 프로그램 설계</span>
+                </div>
+                <ul class="achievements">
+                    <li>20명 대규모 팀 협업 및 조율 능력 개발</li>
+                    <li>베트남 현지 교육 프로그램 기획 및 실행</li>
+                    <li>다문화 환경에서의 소통 및 협업 능력 향상</li>
+                    <li>국제적 시각과 글로벌 마인드 개발</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">세계시민성 교육 팀 과제 해결</h3>
+                        <p class="item-company">팀장</p>
+                    </div>
+                    <span class="item-period">2023.05 - 2023.12</span>
+                </div>
+                <p class="item-description">호남대학교와 싱가포르에서 진행된 세계시민성 교육 프로그램에서 팀장으로 선발되어 프로그램 기획 및 글로벌 마인드를 개발했습니다.</p>
+                <div class="item-tech">
+                    <span class="tech-tag">프로그램 기획</span>
+                    <span class="tech-tag">국제 교류</span>
+                    <span class="tech-tag">팀 리더십</span>
+                    <span class="tech-tag">글로벌 마인드</span>
+                </div>
+                <ul class="achievements">
+                    <li>프로그램 선발 과정에서 팀장으로 선발</li>
+                    <li>싱가포르 탐방 프로그램 기획 및 실행</li>
+                    <li>다양한 배경의 팀원들과의 협업 경험</li>
+                    <li>글로벌 이슈 해결을 위한 창의적 사고 개발</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">청사진 책 집필</h3>
+                        <p class="item-company">집필 참여</p>
+                    </div>
+                    <span class="item-period">2023.06</span>
+                </div>
+                <p class="item-description">광산구 청년정책 위원회 주관으로 청년들이 모여 책을 집필하는 프로젝트에 참여했습니다. 30명이 함께 참여하는 대규모 협업과 창의적 사고 능력을 개발했습니다.</p>
+                <div class="item-tech">
+                    <span class="tech-tag">창의적 사고</span>
+                    <span class="tech-tag">문서 작성</span>
+                    <span class="tech-tag">대규모 협업</span>
+                    <span class="tech-tag">커뮤니케이션</span>
+                </div>
+                <ul class="achievements">
+                    <li>30명 대규모 팀과의 협업을 통한 책 집필 완성</li>
+                    <li>창의적 아이디어 발굴 및 문서화 능력 개발</li>
+                    <li>다양한 관점을 통합하는 협업 경험</li>
+                    <li>기술적 내용을 일반 독자용으로 재구성하는 능력 향상</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">KT&G 상상 마케팅 스쿨</h3>
+                        <p class="item-company">수료생</p>
+                    </div>
+                    <span class="item-period">2022.12</span>
+                </div>
+                <p class="item-description">해외 기업 광고제작을 포함한 사용자 중심 마케팅 전략과 브랜딩 전략을 학습했습니다. 실제 기업 케이스 스터디를 통해 이론을 실무에 적용하는 방법을 배웠습니다.</p>
+                <div class="item-tech">
+                    <span class="tech-tag">마케팅 전략</span>
+                    <span class="tech-tag">브랜딩</span>
+                    <span class="tech-tag">사용자 경험</span>
+                    <span class="tech-tag">UI/UX 설계</span>
+                </div>
+                <ul class="achievements">
+                    <li>사용자 중심 마케팅 전략 수립 방법 학습</li>
+                    <li>브랜드 아이덴티티와 사용자 인식의 중요성 이해</li>
+                    <li>프론트엔드 개발에 필요한 사용자 경험 관점 습득</li>
+                    <li>사용자 리서치 및 인터뷰 기법 습득</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">광주동구청장배 창업 아이디어 경진대회</h3>
+                        <p class="item-company">참가</p>
+                    </div>
+                    <span class="item-period">2022.02</span>
+                </div>
+                <p class="item-description">광주 동구청에서 주최한 창업 아이디어 경진대회에 참가하여 웹 페이지 기획으로 입상했습니다.</p>
+                <div class="item-tech">
+                    <span class="tech-tag">웹 기획</span>
+                    <span class="tech-tag">UI/UX 설계</span>
+                    <span class="tech-tag">아이디어 발굴</span>
+                    <span class="tech-tag">사용자 리서치</span>
+                </div>
+                <ul class="achievements">
+                    <li>대회 입상으로 창의성 및 기획 능력 인정</li>
+                    <li>웹 페이지 기획을 통한 사용자 중심 사고 개발</li>
+                    <li>프론트엔드 개발에 필요한 기획 역량 기반 마련</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 학력 -->
+        <div class="section">
+            <h2 class="section-title">학력</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">호남대학교 전자공학과</h3>
+                        <p class="item-company">학사 졸업예정</p>
+                    </div>
+                    <span class="item-period">2019.03 - 2025.02</span>
+                </div>
+                <p class="item-description">전자공학을 전공하며 하드웨어와 소프트웨어 융합 기술에 대한 기초를 다졌습니다. 학점 3.5/4.5로 우수한 성적을 유지하며, 졸업작품으로 시각 장애인을 위한 IoT 기반 자율주행 지팡이를 개발하여 장려상을 수상했습니다.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">학다리고등학교</h3>
+                        <p class="item-company">고등학교 졸업</p>
+                    </div>
+                    <span class="item-period">2017.01 - 2019.02</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 병역 -->
+        <div class="section">
+            <h2 class="section-title">병역</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">해군 수송병</h3>
+                        <p class="item-company">병장</p>
+                    </div>
+                    <span class="item-period">2019.10 - 2021.07</span>
+                </div>
+                <p class="item-description">물류 정리 및 물품 검수 업무를 담당하며 체계적이고 책임감 있는 업무 수행 능력을 기를 수 있었습니다.</p>
+            </div>
+        </div>
+
+        <!-- 자격증 -->
+        <div class="section">
+            <h2 class="section-title">자격증</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">COS Pro Python 3급</h3>
+                        <p class="item-company">YBM IT</p>
+                    </div>
+                    <span class="item-period">2023.12</span>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">초경량비행장치 조종자 1종대형</h3>
+                        <p class="item-company">한국교통안전공단</p>
+                    </div>
+                    <span class="item-period">2018.04.02</span>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">운전면허증 1종보통</h3>
+                        <p class="item-company">전남지방경찰청</p>
+                    </div>
+                    <span class="item-period">2018.12.24</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 수상 -->
+        <div class="section">
+            <h2 class="section-title">수상</h2>
+            <ul class="achievements">
+                <li>호남대학교 졸업작품 장려상 (IoT 자율 주행 지팡이 프로젝트)</li>
+                <li>광주 동구청장배 사업 아이디어 경진대회 입상</li>
+                <li>드론 축구 경진대회 참가 (전북대학교)</li>
+            </ul>
+        </div>
+
+        <!-- 아르바이트 경험 -->
+        <div class="section">
+            <h2 class="section-title">아르바이트 경험</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">기아 Auto Land</h3>
+                        <p class="item-company">생산 인턴</p>
+                    </div>
+                    <span class="item-period">2024.03</span>
+                </div>
+                <p class="item-description">광주하남에서 주말 특근 생산 인턴으로 활동하며 제조업 현장 경험을 쌓았습니다.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">트라이시스</h3>
+                        <p class="item-company">인턴</p>
+                    </div>
+                    <span class="item-period">2023.02 - 2024.01</span>
+                </div>
+                <p class="item-description">경기도 성남에서 영상 처리 코딩 업무 보조 및 정산 업무 보조를 담당하며 업무 처리 능력을 기를 수 있었습니다.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">영암마트</h3>
+                        <p class="item-company">캐셔</p>
+                    </div>
+                    <span class="item-period">2022.12 - 2023.02</span>
+                </div>
+                <p class="item-description">캐셔 업무를 담당하며 고객 응대 및 금전 관리 능력을 기를 수 있었습니다.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">하나로마트</h3>
+                        <p class="item-company">캐셔</p>
+                    </div>
+                    <span class="item-period">2022.12 - 2023.02</span>
+                </div>
+                <p class="item-description">캐셔 업무를 담당하며 고객 응대 및 금전 관리 능력을 기를 수 있었습니다.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">알프스</h3>
+                        <p class="item-company">아르바이트</p>
+                    </div>
+                    <span class="item-period">2019.07</span>
+                </div>
+                <p class="item-description">물류 창고 근무를 하며 직원들과 좋은 관계를 유지하는 법을 배우고 업무적 협력을 처음 배웠습니다.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
