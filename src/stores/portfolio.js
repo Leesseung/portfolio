@@ -12,7 +12,7 @@ export const usePortfolioStore = defineStore('portfolio', {
       email: 'lsm122500@naver.com',
       location: '광주 광역시 광산구, 대한민국',
       bio: '창의적이고 사용자 중심의 웹 애플리케이션을 개발하는 것을 좋아하는 개발자입니다. 최신 기술 트렌드를 학습하고 적용하는 것에 열정을 가지고 있습니다.',
-      avatar: '/portfolio/profile.jpeg'
+      avatar: '/profile.jpeg'
     },
     
     // 기술 스택
@@ -51,7 +51,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         id: 1,
         title: 'EduMeet - AI 기반 교육 플랫폼',
         description: 'LiveKit 기반 실시간 화상 회의와 AI 자막, 음성 녹화 기능을 제공하는 차세대 교육 플랫폼',
-        image: '/portfolio/edumeet.png',
+        image: '/edumeet.png',
         technologies: ['Vue.js 3', 'LiveKit', 'Web Speech API', 'Pinia', 'Bootstrap 5'],
         github: 'https://github.com/Leesseung/edumeet.git',
         live: 'http://i13c205.p.ssafy.io/',
@@ -78,7 +78,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         id: 2,
         title: '편리한 금융을 위한 프로젝트',
         description: '예금·적금 상품 비교·추천 플랫폼과 OpenAI 기반 개인화 금융 챗봇 서비스',
-        image: '/portfolio/google.png',
+        image: '/google.png',
         technologies: ['Vue.js 3', 'Django REST Framework', 'OpenAI GPT-4', 'SQLite/PostgreSQL', 'JWT'],
         github: 'https://github.com/Leesseung/-pjt',
         live: null,
@@ -105,7 +105,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         id: 3,
         title: 'IoT 자율 주행 지팡이',
         description: '시각 장애인을 위한 IoT 기반 자율 주행 지팡이 시스템',
-        image: '/portfolio/ridar.jpg',
+        image: '/ridar.jpg',
         technologies: ['Arduino', 'C++', 'python', '라즈베리파이 4', 'IoT', '센서 기술', '모터 제어'],
         github: null,
         live: null,
@@ -132,7 +132,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         id: 4,
         title: '포트폴리오',
         description: 'Vue.js 3와 Tailwind CSS를 활용한 반응형 개발자 포트폴리오 웹사이트',
-        image: '/portfolio/protfolio.png',
+        image: '/protfolio.png',
         technologies: ['Vue.js 3', 'Tailwind CSS', 'Pinia', 'Vue Router', 'Vite', 'JavaScript'],
         github: 'https://github.com/Leesseung/portfolio',
         live: 'https://leesseung.github.io/portfolio',
