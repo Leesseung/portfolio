@@ -20,7 +20,8 @@ export const experienceImages = {
   'PAS팀 베트남 해외 교육 봉사': getImagePath('pasteam.JPG'),
   '교내 세계시민성 프로그램': getImagePath('singapo.jpg'),
   'Google AI Essentials': getImagePath('google.png'),
-  'SSAFY': getImagePath('ssafy.png')
+  'SSAFY': getImagePath('ssafy.png'),
+  'SSAFY (삼성 청년 SW 아카데미)': getImagePath('ssafy.png')
 }
 
 // 프로필 이미지
