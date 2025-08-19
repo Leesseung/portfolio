@@ -165,7 +165,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         company: '청사진 책 집필',
         position: '집필 참여 (30명 협업)',
         period: '2022.03 - 2022.04 (1개월)',
-        description: '30명이 함께 참여하는 청사진 책 집필 프로젝트에 참여하여 대규모 협업과 창의적 사고 능력을 개발했습니다. 미래 기술과 사회 변화에 대한 통찰을 담은 책을 집필하며, 복잡한 주제를 일반 독자들이 이해하기 쉽게 설명하는 능력을 기를 수 있었습니다.',
+        description: '30명이 함께 참여하는 청사진 책 집필 프로젝트에 참여하여 대규모 협업과 창의적 사고 능력을 개발했습니다. 현재 청년들의 모습과 사회 변화에 대한 통찰을 담은 책을 집필하며, 복잡한 주제를 일반 독자들이 이해하기 쉽게 설명하는 능력을 기를 수 있었습니다.',
         technologies: ['창의적 사고', '문서 작성', '대규모 협업', '커뮤니케이션', '기술 문서화', '사용자 중심 사고'],
         achievements: [
           '30명 대규모 팀과의 협업을 통한 책 집필 완성',
@@ -253,11 +253,15 @@ export const usePortfolioStore = defineStore('portfolio', {
         company: 'SSAFY (삼성 청년 SW 아카데미)',
         position: '교육생',
         period: '2025.01 - 현재',
-        description: 'Vue.js와 React를 활용한 웹 애플리케이션 개발, 팀 프로젝트를 통한 협업 역량 강화 및 프론트엔드 전문성을 개발하고 있습니다.',
-        technologies: ['Vue.js', 'React', 'TypeScript', 'django', 'node.js', 'mysql', 'Git'],
+        description: 'Samsung SW AI Academy for Young (SSAFY)는 삼성에서 운영하는 1년 과정의 소프트웨어 개발자 양성 부트캠프입니다. Vue.js, React, TypeScript, Django, Node.js 등 최신 웹 기술을 학습하고, 실제 프로젝트를 통해 실무 역량을 기르고 있습니다.',
+        technologies: ['Vue.js', 'React', 'TypeScript', 'Django', 'Node.js', 'MySQL', 'Git', 'AWS', 'Docker', 'Spring Boot', 'Java', 'Python'],
         achievements: [
-          '6월 1학기 수료, 7월 2학기 시작',
-          '팀 프로젝트를 통한 협업 및 소통 능력 향상'
+          '1학기 수료 (2025.01 - 2025.06)',
+          '2학기 진행 중 (2025.07 - 현재)',
+          '팀 프로젝트를 통한 협업 및 소통 능력 향상',
+          '실무 중심의 프로젝트 기반 학습',
+          '최신 웹 개발 기술 스택 습득',
+          'AI/ML 기초 지식 학습'
         ]
       },
       {

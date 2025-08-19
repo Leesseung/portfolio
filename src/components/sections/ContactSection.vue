@@ -114,17 +114,17 @@
             
             <div class="form-field animate-on-scroll" data-delay="0.5">
               <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-                피드백 유형 *
+                어떤 부분에 대한 피드백인가요? *
               </label>
               <div class="grid grid-cols-2 gap-3">
                 <button
                   type="button"
                   @click="form.subject = '기술적 역량'"
                   :class="[
-                    'px-4 py-3 text-sm font-medium rounded-lg border-2 transition-all duration-200',
+                    'px-4 py-3 text-sm font-medium rounded-xl transition-all duration-300 transform hover:scale-105 shadow-sm',
                     form.subject === '기술적 역량'
-                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
-                      : 'border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-600'
+                      ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/30'
+                      : 'bg-gradient-to-r from-gray-50 to-gray-100 dark:from-dark-700 dark:to-dark-800 text-gray-700 dark:text-gray-300 hover:from-gray-100 hover:to-gray-200 dark:hover:from-dark-600 dark:hover:to-dark-700 border border-gray-200 dark:border-dark-600'
                   ]"
                 >
                   기술적 역량
@@ -133,10 +133,10 @@
                   type="button"
                   @click="form.subject = '프로젝트 경험'"
                   :class="[
-                    'px-4 py-3 text-sm font-medium rounded-lg border-2 transition-all duration-200',
+                    'px-4 py-3 text-sm font-medium rounded-xl transition-all duration-300 transform hover:scale-105 shadow-sm',
                     form.subject === '프로젝트 경험'
-                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
-                      : 'border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-600'
+                      ? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg shadow-green-500/30'
+                      : 'bg-gradient-to-r from-gray-50 to-gray-100 dark:from-dark-700 dark:to-dark-800 text-gray-700 dark:text-gray-300 hover:from-gray-100 hover:to-gray-200 dark:hover:from-dark-600 dark:hover:to-dark-700 border border-gray-200 dark:border-dark-600'
                   ]"
                 >
                   프로젝트 경험
@@ -145,10 +145,10 @@
                   type="button"
                   @click="form.subject = '커뮤니케이션'"
                   :class="[
-                    'px-4 py-3 text-sm font-medium rounded-lg border-2 transition-all duration-200',
+                    'px-4 py-3 text-sm font-medium rounded-xl transition-all duration-300 transform hover:scale-105 shadow-sm',
                     form.subject === '커뮤니케이션'
-                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
-                      : 'border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-600'
+                      ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg shadow-purple-500/30'
+                      : 'bg-gradient-to-r from-gray-50 to-gray-100 dark:from-dark-700 dark:to-dark-800 text-gray-700 dark:text-gray-300 hover:from-gray-100 hover:to-gray-200 dark:hover:from-dark-600 dark:hover:to-dark-700 border border-gray-200 dark:border-dark-600'
                   ]"
                 >
                   커뮤니케이션
@@ -157,10 +157,10 @@
                   type="button"
                   @click="form.subject = '포트폴리오 구성'"
                   :class="[
-                    'px-4 py-3 text-sm font-medium rounded-lg border-2 transition-all duration-200',
+                    'px-4 py-3 text-sm font-medium rounded-xl transition-all duration-300 transform hover:scale-105 shadow-sm',
                     form.subject === '포트폴리오 구성'
-                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
-                      : 'border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-600'
+                      ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/30'
+                      : 'bg-gradient-to-r from-gray-50 to-gray-100 dark:from-dark-700 dark:to-dark-800 text-gray-700 dark:text-gray-300 hover:from-gray-100 hover:to-gray-200 dark:hover:from-dark-600 dark:hover:to-dark-700 border border-gray-200 dark:border-dark-600'
                   ]"
                 >
                   포트폴리오 구성
@@ -169,10 +169,10 @@
                   type="button"
                   @click="form.subject = '기타'"
                   :class="[
-                    'px-4 py-3 text-sm font-medium rounded-lg border-2 transition-all duration-200 col-span-2',
+                    'px-4 py-3 text-sm font-medium rounded-xl transition-all duration-300 transform hover:scale-105 shadow-sm col-span-2',
                     form.subject === '기타'
-                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
-                      : 'border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-600'
+                      ? 'bg-gradient-to-r from-gray-600 to-gray-700 text-white shadow-lg shadow-gray-600/30'
+                      : 'bg-gradient-to-r from-gray-50 to-gray-100 dark:from-dark-700 dark:to-dark-800 text-gray-700 dark:text-gray-300 hover:from-gray-100 hover:to-gray-200 dark:hover:from-dark-600 dark:hover:to-dark-700 border border-gray-200 dark:border-dark-600'
                   ]"
                 >
                   기타
