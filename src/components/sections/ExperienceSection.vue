@@ -335,6 +335,7 @@
 import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue'
 import { usePortfolioStore } from '@/stores/portfolio'
 import { useRoute } from 'vue-router'
+import { experienceImages } from '@/utils/images'
 import { CalendarIcon, CheckCircleIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const store = usePortfolioStore()
@@ -387,15 +388,7 @@ const handleCardClick = (experience) => {
 
 // 이미지 매핑 함수
 const getExperienceImage = (company) => {
-  const imageMap = {
-    '호남대학교 전자공학과': '/honam.jpg',
-    'KT&G 상상 마케팅 스쿨': '/kt&g.png',
-    'PAS팀 베트남 해외 교육 봉사': '/pasteam.JPG',
-    '교내 세계시민성 프로그램': '/singapo.jpg',
-    'Google AI Essentials': '/google.png',
-    'SSAFY': '/ssafy.png'
-  }
-  return imageMap[company] || null
+  return experienceImages[company] || null
 }
 
 // 이미지 에러 핸들러
