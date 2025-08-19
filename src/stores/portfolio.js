@@ -162,21 +162,6 @@ export const usePortfolioStore = defineStore('portfolio', {
     experience: [
       {
         id: 1,
-        company: '호남대학교 전자공학과',
-        position: '학부생',
-        period: '2019.03 - 2025.02',
-        description: '전자공학 전공 과정을 수료하며 하드웨어와 소프트웨어 융합 기술의 기초를 다졌습니다. 마이크로프로세서, 디지털 회로 설계, C/C++ 프로그래밍 등 핵심 전공 과목을 통해 기술적 기반을 구축하고, 졸업 프로젝트로 시각 장애인을 위한 자율주행 지팡이를 개발했습니다.',
-        technologies: ['전자공학', 'C/C++', 'Arduino', '하드웨어 설계', '수학/물리', '마이크로프로세서', '디지털 회로'],
-        achievements: [
-          '전자공학과 졸업으로 기술적 기초 역량 확보',
-          '다양한 팀 프로젝트를 통한 협업 경험 축적',
-          '하드웨어와 소프트웨어 융합 사고 개발',
-          '졸업 작품 수상으로 기술적 역량 인정',
-          '실제 사용자를 위한 IoT 프로젝트 완성'
-        ]
-      },
-      {
-        id: 2,
         company: '청사진 책 집필',
         position: '집필 참여 (30명 협업)',
         period: '2022.03 - 2022.04 (1개월)',
@@ -191,7 +176,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         ]
       },
       {
-        id: 3,
+        id: 2,
         company: 'KT&G 상상 마케팅 스쿨',
         position: '수료생',
         period: '2022.06 - 2022.08',
@@ -206,7 +191,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         ]
       },
       {
-        id: 4,
+        id: 3,
         company: '광주 동구청장배 사업 아이디어 경진대회',
         position: '웹 페이지 기획',
         period: '2023.03 - 2023.06',
@@ -219,7 +204,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         ]
       },
       {
-        id: 5,
+        id: 4,
         company: '교내 세계시민성 프로그램',
         position: '팀장',
         period: '2023.06 - 2023.12',
@@ -234,7 +219,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         ]
       },
       {
-        id: 6,
+        id: 5,
         company: 'PAS팀 베트남 해외 교육 봉사',
         position: '기획 부팀장',
         period: '2024.04 - 2024.07',
@@ -249,7 +234,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         ]
       },
       {
-        id: 7,
+        id: 6,
         company: '호남대학교 전자공학과',
         position: '졸업 작품 팀장',
         period: '2024.06 - 2025.02',
@@ -264,7 +249,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         ]
       },
       {
-        id: 8,
+        id: 7,
         company: 'SSAFY (삼성 청년 SW 아카데미)',
         position: '교육생',
         period: '2025.01 - 현재',
@@ -276,7 +261,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         ]
       },
       {
-        id: 9,
+        id: 8,
         company: 'Google AI Essentials',
         position: '수강생',
         period: '2024.12 - 현재',
