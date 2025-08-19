@@ -65,7 +65,7 @@
               <div class="bg-white dark:bg-dark-800 rounded-xl p-8 text-center">
                 <img 
                   v-if="project.image" 
-                  :src="project.image" 
+                  :src="projectImages[project.image] || project.image" 
                   :alt="project.title"
                   class="w-full h-64 object-cover rounded-lg mb-6 mx-auto"
                   @error="handleImageError"
@@ -199,6 +199,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { usePortfolioStore } from '@/stores/portfolio'
+import { projectImages } from '@/utils/images'
 import { 
   ArrowLeftIcon, 
   CodeBracketIcon, 

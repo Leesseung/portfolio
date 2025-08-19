@@ -41,7 +41,7 @@
                 <div class="absolute inset-0 flex items-center justify-center">
                   <img 
                     v-if="project.image" 
-                    :src="project.image" 
+                    :src="projectImages[project.image] || project.image" 
                     :alt="project.title"
                     class="w-full h-full object-cover"
                     @error="handleImageError"
@@ -132,6 +132,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { usePortfolioStore } from '@/stores/portfolio'
+import { projectImages } from '@/utils/images'
 import { FolderIcon, CodeBracketIcon, ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline'
 import { onMounted } from 'vue'
 
