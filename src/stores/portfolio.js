@@ -33,6 +33,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         items: [
           { name: 'Node.js', level: 70, icon: 'nodejs' },
           { name: 'Python', level: 85, icon: 'python' },
+          { name: 'Django', level: 75, icon: 'django' },
           { name: 'MySQL', level: 60, icon: 'mysql' }
         ]
       },
