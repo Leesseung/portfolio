@@ -113,22 +113,76 @@
             </div>
             
             <div class="form-field animate-on-scroll" data-delay="0.5">
-              <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
                 피드백 유형 *
               </label>
-              <select
-                id="subject"
+              <div class="grid grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  @click="form.subject = '기술적 역량'"
+                  :class="[
+                    'px-4 py-3 text-sm font-medium rounded-lg border-2 transition-all duration-200',
+                    form.subject === '기술적 역량'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
+                      : 'border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-600'
+                  ]"
+                >
+                  기술적 역량
+                </button>
+                <button
+                  type="button"
+                  @click="form.subject = '프로젝트 경험'"
+                  :class="[
+                    'px-4 py-3 text-sm font-medium rounded-lg border-2 transition-all duration-200',
+                    form.subject === '프로젝트 경험'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
+                      : 'border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-600'
+                  ]"
+                >
+                  프로젝트 경험
+                </button>
+                <button
+                  type="button"
+                  @click="form.subject = '커뮤니케이션'"
+                  :class="[
+                    'px-4 py-3 text-sm font-medium rounded-lg border-2 transition-all duration-200',
+                    form.subject === '커뮤니케이션'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
+                      : 'border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-600'
+                  ]"
+                >
+                  커뮤니케이션
+                </button>
+                <button
+                  type="button"
+                  @click="form.subject = '포트폴리오 구성'"
+                  :class="[
+                    'px-4 py-3 text-sm font-medium rounded-lg border-2 transition-all duration-200',
+                    form.subject === '포트폴리오 구성'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
+                      : 'border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-600'
+                  ]"
+                >
+                  포트폴리오 구성
+                </button>
+                <button
+                  type="button"
+                  @click="form.subject = '기타'"
+                  :class="[
+                    'px-4 py-3 text-sm font-medium rounded-lg border-2 transition-all duration-200 col-span-2',
+                    form.subject === '기타'
+                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
+                      : 'border-gray-300 dark:border-dark-600 bg-white dark:bg-dark-800 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-600'
+                  ]"
+                >
+                  기타
+                </button>
+              </div>
+              <input
                 v-model="form.subject"
+                type="hidden"
                 required
-                class="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
-              >
-                <option value="">피드백 유형을 선택하세요</option>
-                <option value="기술적 역량">기술적 역량</option>
-                <option value="프로젝트 경험">프로젝트 경험</option>
-                <option value="커뮤니케이션">커뮤니케이션</option>
-                <option value="포트폴리오 구성">포트폴리오 구성</option>
-                <option value="기타">기타</option>
-              </select>
+              />
             </div>
             
             <div class="form-field animate-on-scroll" data-delay="0.6">
@@ -244,7 +298,12 @@ const handleSubmit = async () => {
       from_email: form.value.email || '익명',
       feedback_type: form.value.subject,
       message: form.value.message,
-      to_name: store.developer.name
+      to_name: store.developer.name,
+      // 기본 템플릿용 변수 (템플릿 수정 전까지 사용)
+      user_name: form.value.name || '익명',
+      user_email: form.value.email || '익명',
+      subject: form.value.subject,
+      message: form.value.message
     }
 
     // EmailJS 전송 (GitHub Pages용 하드코딩)
