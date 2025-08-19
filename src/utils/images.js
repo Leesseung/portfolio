@@ -25,4 +25,18 @@ export const experienceImages = {
 }
 
 // 프로필 이미지
-export const profileImage = getImagePath('profile.jpeg') 
+export const profileImage = getImagePath('profile.jpeg')
+
+// 갤러리 이미지 매핑
+export const galleryImages = {
+  'IMG_0068.JPG': getImagePath('IMG_0068.JPG'),
+  'IMG_0067.JPG': getImagePath('IMG_0067.JPG'),
+  'IMG_9308.JPG': getImagePath('IMG_9308.JPG'),
+  'IMG_7057.JPG': getImagePath('IMG_7057.JPG'),
+  'IMG_6738.JPG': getImagePath('IMG_6738.JPG'),
+  'IMG_5473.JPG': getImagePath('IMG_5473.JPG'),
+  'IMG_4246.JPG': getImagePath('IMG_4246.JPG'),
+  'IMG_3655.JPG': getImagePath('IMG_3655.JPG'),
+  'IMG_0453.JPG': getImagePath('IMG_0453.JPG'),
+  'IMG_0257.JPG': getImagePath('IMG_0257.JPG')
+} 

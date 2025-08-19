@@ -114,102 +114,63 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- 좌측: 소개 텍스트 -->
-        <div class="space-y-8 about-content animate-on-scroll" data-delay="0.2">
-          <div class="bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-xl">
-            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-6">
-              협업과 적응력
-            </h4>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-              다양한 경험을 통해 저는 어디서든 잘 어울리고 누구와도 좋은 관계를 맺을 수 있는 협업 능력과 적응력을 기를 수 있었습니다. 
-            </p>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-              호남대학교에서의 팀 프로젝트, KT&G 마케팅 스쿨에서의 대규모 협업, 세계시민성 프로그램에서의 국제적 팀워크, 베트남 해외 교육 봉사에서의 다문화 환경 적응 등 다양한 상황에서 팀원들과 원활하게 소통하고 협력할 수 있었습니다.
-            </p>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              특히 SSAFY에서의 팀 프로젝트를 통해 개발자로서의 협업 능력을 더욱 향상시킬 수 있었고, 서로 다른 배경과 관점을 가진 팀원들과 함께 목표를 달성하는 과정에서 진정한 팀워크의 가치를 배웠습니다.
-            </p>
-          </div>
-
-          <div class="bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-xl">
-            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-6">
-              학습 태도와 업무 태도
-            </h4>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-              저는 끊임없는 학습과 성장을 추구하는 개발자입니다. 새로운 기술을 배우는 것을 즐기며, 항상 최신 트렌드를 파악하고 적용하려고 노력합니다.
-            </p>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-              업무에서는 책임감과 꼼꼼함을 바탕으로 일하며, 사용자 중심의 사고로 최고의 결과물을 만들어내는 것을 목표로 합니다. 문제가 발생했을 때는 적극적으로 해결책을 찾고, 팀원들과 함께 성장하는 것을 중요하게 생각합니다.
-            </p>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              또한 피드백을 받고 성장하는 것을 매우 중요하게 생각하여, 항상 개선할 점을 찾고 더 나은 개발자가 되기 위해 노력하고 있습니다.
-            </p>
-          </div>
-
-          <div class="bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-xl">
-            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-6">
-              인성과 가치관
-            </h4>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-              저는 정직하고 신뢰할 수 있는 사람이 되고자 노력합니다. 약속을 지키고, 팀원들과의 약속도 소중하게 여깁니다.
-            </p>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-              베트남 해외 교육 봉사 경험을 통해 다른 사람을 돕는 것의 가치를 깊이 이해하게 되었고, 개발자로서도 사용자에게 도움이 되는 서비스를 만드는 것이 가장 중요하다고 생각합니다.
-            </p>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              긍정적인 마인드로 어려운 상황에서도 해결책을 찾아내며, 팀원들에게 긍정적인 에너지를 전달할 수 있는 개발자가 되고 싶습니다.
-            </p>
+        <div class="about-content animate-on-scroll" data-delay="0.2">
+          <div class="relative">
+            <!-- 화살표 버튼들 -->
+            <div class="flex justify-between items-center mb-6">
+              <button 
+                @click="prevCard"
+                class="bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              
+              <div class="flex space-x-2">
+                <div 
+                  v-for="(card, index) in textCards" 
+                  :key="index"
+                  :class="['w-3 h-3 rounded-full transition-all duration-300', currentCardIndex === index ? 'bg-primary-600' : 'bg-gray-300 dark:bg-gray-600']"
+                ></div>
+              </div>
+              
+              <button 
+                @click="nextCard"
+                class="bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+            
+            <!-- 텍스트 카드 -->
+            <div class="bg-white dark:bg-dark-800 rounded-2xl p-8 shadow-xl min-h-[400px] transition-all duration-500">
+              <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-6">
+                {{ textCards[currentCardIndex].title }}
+              </h4>
+              <div v-html="textCards[currentCardIndex].content" class="text-gray-600 dark:text-gray-400 leading-relaxed"></div>
+            </div>
           </div>
         </div>
 
         <!-- 우측: 이미지 갤러리 -->
         <div class="about-gallery animate-on-scroll" data-delay="0.4">
-          <div class="bg-white dark:bg-dark-800 rounded-2xl p-6 shadow-xl">
-            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-              다양한 경험의 순간들
-            </h4>
-            <div class="space-y-4 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-gray-100 dark:scrollbar-track-gray-800">
-              <div class="bg-gray-50 dark:bg-dark-700 rounded-lg p-4">
-                <img src="/IMG_0068.JPG" alt="팀 프로젝트 활동" class="w-full h-48 object-cover rounded-lg mb-3" />
-                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">팀 프로젝트 활동</p>
-              </div>
-              <div class="bg-gray-50 dark:bg-dark-700 rounded-lg p-4">
-                <img src="/IMG_0067.JPG" alt="협업 활동" class="w-full h-48 object-cover rounded-lg mb-3" />
-                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">협업 활동</p>
-              </div>
-              <div class="bg-gray-50 dark:bg-dark-700 rounded-lg p-4">
-                <img src="/IMG_9308.JPG" alt="학습 활동" class="w-full h-48 object-cover rounded-lg mb-3" />
-                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">학습 활동</p>
-              </div>
-              <div class="bg-gray-50 dark:bg-dark-700 rounded-lg p-4">
-                <img src="/IMG_7057.JPG" alt="팀워크 활동" class="w-full h-48 object-cover rounded-lg mb-3" />
-                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">팀워크 활동</p>
-              </div>
-              <div class="bg-gray-50 dark:bg-dark-700 rounded-lg p-4">
-                <img src="/IMG_6738.JPG" alt="프로젝트 활동" class="w-full h-48 object-cover rounded-lg mb-3" />
-                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">프로젝트 활동</p>
-              </div>
-              <div class="bg-gray-50 dark:bg-dark-700 rounded-lg p-4">
-                <img src="/IMG_5473.JPG" alt="개발 활동" class="w-full h-48 object-cover rounded-lg mb-3" />
-                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">개발 활동</p>
-              </div>
-              <div class="bg-gray-50 dark:bg-dark-700 rounded-lg p-4">
-                <img src="/IMG_4246.JPG" alt="학습 모습" class="w-full h-48 object-cover rounded-lg mb-3" />
-                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">학습 모습</p>
-              </div>
-              <div class="bg-gray-50 dark:bg-dark-700 rounded-lg p-4">
-                <img src="/IMG_3655.JPG" alt="팀 활동" class="w-full h-48 object-cover rounded-lg mb-3" />
-                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">팀 활동</p>
-              </div>
-              <div class="bg-gray-50 dark:bg-dark-700 rounded-lg p-4">
-                <img src="/IMG_0453.JPG" alt="협업 모습" class="w-full h-48 object-cover rounded-lg mb-3" />
-                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">협업 모습</p>
-              </div>
-              <div class="bg-gray-50 dark:bg-dark-700 rounded-lg p-4">
-                <img src="/IMG_0257.JPG" alt="프로젝트 완료" class="w-full h-48 object-cover rounded-lg mb-3" />
-                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">프로젝트 완료</p>
-              </div>
+          <div class="max-h-[800px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-gray-100 dark:scrollbar-track-gray-800">
+            <div class="space-y-4 flex flex-col items-center">
+              <img :src="galleryImages['IMG_0068.JPG']" alt="팀 프로젝트 활동" class="w-1/2 rounded-2xl shadow-xl" />
+              <img :src="galleryImages['IMG_0067.JPG']" alt="협업 활동" class="w-1/2 rounded-2xl shadow-xl" />
+              <img :src="galleryImages['IMG_9308.JPG']" alt="학습 활동" class="w-1/2 rounded-2xl shadow-xl" />
+              <img :src="galleryImages['IMG_7057.JPG']" alt="팀워크 활동" class="w-1/2 rounded-2xl shadow-xl" />
+              <img :src="galleryImages['IMG_6738.JPG']" alt="프로젝트 활동" class="w-1/2 rounded-2xl shadow-xl" />
+              <img :src="galleryImages['IMG_5473.JPG']" alt="개발 활동" class="w-1/2 rounded-2xl shadow-xl" />
+              <img :src="galleryImages['IMG_4246.JPG']" alt="학습 모습" class="w-1/2 rounded-2xl shadow-xl" />
+              <img :src="galleryImages['IMG_3655.JPG']" alt="팀 활동" class="w-1/2 rounded-2xl shadow-xl" />
+              <img :src="galleryImages['IMG_0453.JPG']" alt="협업 모습" class="w-1/2 rounded-2xl shadow-xl" />
+              <img :src="galleryImages['IMG_0257.JPG']" alt="프로젝트 완료" class="w-1/2 rounded-2xl shadow-xl" />
             </div>
           </div>
         </div>
@@ -219,12 +180,68 @@
 </template>
 
 <script setup>
-import { computed, onMounted, nextTick } from 'vue'
+import { computed, onMounted, nextTick, ref } from 'vue'
 import { usePortfolioStore } from '@/stores/portfolio'
-import { profileImage } from '@/utils/images'
+import { profileImage, galleryImages } from '@/utils/images'
 import { MapPinIcon, EnvelopeIcon } from '@heroicons/vue/24/outline'
 
 const store = usePortfolioStore()
+
+// 텍스트 카드 슬라이더
+const currentCardIndex = ref(0)
+const textCards = ref([
+  {
+    title: '협업과 적응력',
+    content: `
+      <p class="mb-4">
+        다양한 경험을 통해 저는 어디서든 잘 어울리고 누구와도 좋은 관계를 맺을 수 있는 협업 능력과 적응력을 기를 수 있었습니다.
+      </p>
+      <p class="mb-4">
+        호남대학교에서의 팀 프로젝트, KT&G 마케팅 스쿨에서의 대규모 협업, 세계시민성 프로그램에서의 국제적 팀워크, 베트남 해외 교육 봉사에서의 다문화 환경 적응 등 다양한 상황에서 팀원들과 원활하게 소통하고 협력할 수 있었습니다.
+      </p>
+      <p>
+        특히 SSAFY에서의 팀 프로젝트를 통해 개발자로서의 협업 능력을 더욱 향상시킬 수 있었고, 서로 다른 배경과 관점을 가진 팀원들과 함께 목표를 달성하는 과정에서 진정한 팀워크의 가치를 배웠습니다.
+      </p>
+    `
+  },
+  {
+    title: '학습 태도와 업무 태도',
+    content: `
+      <p class="mb-4">
+        저는 끊임없는 학습과 성장을 추구하는 개발자입니다. 새로운 기술을 배우는 것을 즐기며, 항상 최신 트렌드를 파악하고 적용하려고 노력합니다.
+      </p>
+      <p class="mb-4">
+        업무에서는 책임감과 꼼꼼함을 바탕으로 일하며, 사용자 중심의 사고로 최고의 결과물을 만들어내는 것을 목표로 합니다. 문제가 발생했을 때는 적극적으로 해결책을 찾고, 팀원들과 함께 성장하는 것을 중요하게 생각합니다.
+      </p>
+      <p>
+        또한 피드백을 받고 성장하는 것을 매우 중요하게 생각하여, 항상 개선할 점을 찾고 더 나은 개발자가 되기 위해 노력하고 있습니다.
+      </p>
+    `
+  },
+  {
+    title: '인성과 가치관',
+    content: `
+      <p class="mb-4">
+        저는 정직하고 신뢰할 수 있는 사람이 되고자 노력합니다. 약속을 지키고, 팀원들과의 약속도 소중하게 여깁니다.
+      </p>
+      <p class="mb-4">
+        베트남 해외 교육 봉사 경험을 통해 다른 사람을 돕는 것의 가치를 깊이 이해하게 되었고, 개발자로서도 사용자에게 도움이 되는 서비스를 만드는 것이 가장 중요하다고 생각합니다.
+      </p>
+      <p>
+        긍정적인 마인드로 어려운 상황에서도 해결책을 찾아내며, 팀원들에게 긍정적인 에너지를 전달할 수 있는 개발자가 되고 싶습니다.
+      </p>
+    `
+  }
+])
+
+// 카드 슬라이더 함수들
+const nextCard = () => {
+  currentCardIndex.value = (currentCardIndex.value + 1) % textCards.value.length
+}
+
+const prevCard = () => {
+  currentCardIndex.value = currentCardIndex.value === 0 ? textCards.value.length - 1 : currentCardIndex.value - 1
+}
 
 // 상위 기술 4개만 표시
 const topSkills = computed(() => {
@@ -464,6 +481,15 @@ onMounted(async () => {
 
 .dark .scrollbar-track-gray-800::-webkit-scrollbar-track {
   background-color: #1f2937;
+}
+
+/* 이미지 크기 조정 */
+.w-3\/10 {
+  width: 30%;
+}
+
+.w-3\/5 {
+  width: 60%;
 }
 
 /* 호버 효과 */
