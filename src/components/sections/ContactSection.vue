@@ -87,14 +87,14 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 form-row animate-on-scroll" data-delay="0.4">
               <div class="form-field animate-on-scroll">
                 <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  이름 (선택사항)
+                  회사명 (선택사항)
                 </label>
                 <input
                   id="name"
                   v-model="form.name"
                   type="text"
                   class="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
-                  placeholder="이름을 입력하세요 (익명 가능)"
+                  placeholder="회사명을 입력하세요 (익명 가능)"
                 />
               </div>
               
@@ -238,19 +238,30 @@ const handleSubmit = async () => {
   showErrorMessage.value = false
   
   try {
-    // EmailJS 설정 (실제 사용 시 EmailJS 계정 정보로 교체 필요)
+    // EmailJS 설정
     const templateParams = {
-      from_name: form.value.name || '익명',
+      from_company: form.value.name || '익명',
       from_email: form.value.email || '익명',
       feedback_type: form.value.subject,
       message: form.value.message,
       to_name: store.developer.name
     }
 
-    // EmailJS 전송 (실제 사용 시 service_id, template_id, public_key 필요)
-    // await emailjs.send('service_id', 'template_id', templateParams, 'public_key')
+    // EmailJS 전송 (환경변수 사용)
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     
-    // 임시로 시뮬레이션
+    if (!serviceId || !templateId || !publicKey) {
+      throw new Error('EmailJS 설정이 완료되지 않았습니다. .env 파일을 확인해주세요.')
+    }
+    
+    await emailjs.send(serviceId, templateId, templateParams, publicKey)
+    
+    // 실제 이메일 전송 (환경변수 설정 후 주석 해제)
+    // await emailjs.send(serviceId, templateId, templateParams, publicKey)
+    
+    // 임시로 시뮬레이션 (실제 EmailJS 설정 후 제거)
     await new Promise(resolve => setTimeout(resolve, 2000))
     
     // 성공 메시지
