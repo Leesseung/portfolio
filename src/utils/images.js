@@ -15,7 +15,7 @@ export const projectImages = {
 
 // 경험 이미지 매핑
 export const experienceImages = {
-  '호남대학교 전자공학과': getImagePath('honamridar.JPG'),
+  '호남대학교 전자공학과': getImagePath('honam.jpg'),
   'KT&G 상상 마케팅 스쿨': getImagePath('kt&g.png'),
   'PAS팀 베트남 해외 교육 봉사': getImagePath('pasteam.JPG'),
   '교내 세계시민성 프로그램': getImagePath('singapo.jpg'),

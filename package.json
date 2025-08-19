@@ -11,8 +11,10 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.0.18",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^10.16.4",
     "pinia": "^2.1.7",
     "vue": "^3.4.0",

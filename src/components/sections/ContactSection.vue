@@ -3,10 +3,10 @@
     <div class="container-custom">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 contact-title animate-on-scroll">
-          Get In Touch
+          피드백 보내기
         </h2>
         <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto contact-subtitle animate-on-scroll">
-          프로젝트 협업이나 궁금한 점이 있으시면 언제든 연락해주세요.
+          저에게 당신의 회사에 입사하기에 부족하다 느끼는 부분을 피드백 해주세요. 피드백을 받고 성장하겠습니다.
         </p>
       </div>
 
@@ -80,57 +80,60 @@
         <!-- 연락처 폼 -->
         <div class="card p-8 contact-form animate-on-scroll" data-delay="0.3">
           <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 form-title animate-on-scroll">
-            메시지 보내기
+            피드백 작성
           </h3>
           
           <form @submit.prevent="handleSubmit" class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 form-row animate-on-scroll" data-delay="0.4">
               <div class="form-field animate-on-scroll">
                 <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  이름 *
+                  이름 (선택사항)
                 </label>
                 <input
                   id="name"
                   v-model="form.name"
                   type="text"
-                  required
                   class="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
-                  placeholder="이름을 입력하세요"
+                  placeholder="이름을 입력하세요 (익명 가능)"
                 />
               </div>
               
               <div class="form-field animate-on-scroll">
                 <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  이메일 *
+                  이메일 (선택사항)
                 </label>
                 <input
                   id="email"
                   v-model="form.email"
                   type="email"
-                  required
                   class="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
-                  placeholder="이메일을 입력하세요"
+                  placeholder="이메일을 입력하세요 (익명 가능)"
                 />
               </div>
             </div>
             
             <div class="form-field animate-on-scroll" data-delay="0.5">
               <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                제목 *
+                피드백 유형 *
               </label>
-              <input
+              <select
                 id="subject"
                 v-model="form.subject"
-                type="text"
                 required
                 class="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
-                placeholder="제목을 입력하세요"
-              />
+              >
+                <option value="">피드백 유형을 선택하세요</option>
+                <option value="기술적 역량">기술적 역량</option>
+                <option value="프로젝트 경험">프로젝트 경험</option>
+                <option value="커뮤니케이션">커뮤니케이션</option>
+                <option value="포트폴리오 구성">포트폴리오 구성</option>
+                <option value="기타">기타</option>
+              </select>
             </div>
             
             <div class="form-field animate-on-scroll" data-delay="0.6">
               <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                메시지 *
+                피드백 내용 *
               </label>
               <textarea
                 id="message"
@@ -138,7 +141,7 @@
                 rows="6"
                 required
                 class="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white resize-none"
-                placeholder="메시지를 입력하세요"
+                placeholder="구체적인 피드백을 작성해주세요. 어떤 부분이 부족하다고 생각하시나요?"
               ></textarea>
             </div>
             
@@ -149,9 +152,41 @@
               data-delay="0.7"
             >
               <span v-if="isSubmitting">전송 중...</span>
-              <span v-else>메시지 보내기</span>
+              <span v-else>피드백 보내기</span>
             </button>
           </form>
+
+          <!-- 성공 메시지 -->
+          <div v-if="showSuccessMessage" class="mt-4 p-4 bg-green-100 dark:bg-green-900/20 border border-green-400 dark:border-green-600 rounded-lg">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-green-800 dark:text-green-200">
+                  피드백이 성공적으로 전송되었습니다! 성장에 도움이 될 것입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 실패 메시지 -->
+          <div v-if="showErrorMessage" class="mt-4 p-4 bg-red-100 dark:bg-red-900/20 border border-red-400 dark:border-red-600 rounded-lg">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-red-800 dark:text-red-200">
+                  피드백 전송에 실패했습니다. 다시 시도해주세요.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -161,6 +196,7 @@
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
 import { usePortfolioStore } from '@/stores/portfolio'
+import emailjs from '@emailjs/browser'
 import { 
   EnvelopeIcon, 
   MapPinIcon, 
@@ -173,6 +209,8 @@ import {
 
 const store = usePortfolioStore()
 const isSubmitting = ref(false)
+const showSuccessMessage = ref(false)
+const showErrorMessage = ref(false)
 
 const form = ref({
   name: '',
@@ -190,15 +228,36 @@ const getSocialIcon = (iconName) => {
 }
 
 const handleSubmit = async () => {
+  if (!form.value.subject || !form.value.message) {
+    alert('피드백 유형과 내용을 입력해주세요.')
+    return
+  }
+
   isSubmitting.value = true
+  showSuccessMessage.value = false
+  showErrorMessage.value = false
   
   try {
-    // 실제 이메일 전송 로직은 여기에 구현
-    // 예: EmailJS, 서버 API 호출 등
-    await new Promise(resolve => setTimeout(resolve, 2000)) // 시뮬레이션
+    // EmailJS 설정 (실제 사용 시 EmailJS 계정 정보로 교체 필요)
+    const templateParams = {
+      from_name: form.value.name || '익명',
+      from_email: form.value.email || '익명',
+      feedback_type: form.value.subject,
+      message: form.value.message,
+      to_name: store.developer.name
+    }
+
+    // EmailJS 전송 (실제 사용 시 service_id, template_id, public_key 필요)
+    // await emailjs.send('service_id', 'template_id', templateParams, 'public_key')
+    
+    // 임시로 시뮬레이션
+    await new Promise(resolve => setTimeout(resolve, 2000))
     
     // 성공 메시지
-    alert('메시지가 성공적으로 전송되었습니다!')
+    showSuccessMessage.value = true
+    setTimeout(() => {
+      showSuccessMessage.value = false
+    }, 5000)
     
     // 폼 초기화
     form.value = {
@@ -208,7 +267,11 @@ const handleSubmit = async () => {
       message: ''
     }
   } catch (error) {
-    alert('메시지 전송에 실패했습니다. 다시 시도해주세요.')
+    console.error('피드백 전송 실패:', error)
+    showErrorMessage.value = true
+    setTimeout(() => {
+      showErrorMessage.value = false
+    }, 5000)
   } finally {
     isSubmitting.value = false
   }
