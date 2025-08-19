@@ -62,7 +62,7 @@
             <div class="relative w-80 h-80 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center shadow-2xl">
               <div class="w-72 h-72 bg-white dark:bg-dark-800 rounded-full flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/profile.jpeg" 
+                  src="/portfolio/profile.jpeg" 
                   :alt="store.developer.name"
                   class="w-full h-full object-cover"
                   @error="handleImageError"

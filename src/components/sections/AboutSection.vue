@@ -18,7 +18,7 @@
               <div class="text-center space-y-4">
                 <div class="w-32 h-32 bg-primary-600 rounded-full flex items-center justify-center mx-auto overflow-hidden profile-image animate-on-scroll" data-delay="0.3">
                   <img 
-                    src="/profile.jpeg" 
+                    src="/portfolio/profile.jpeg" 
                     :alt="store.developer.name"
                     class="w-full h-full object-cover"
                     @error="handleImageError"

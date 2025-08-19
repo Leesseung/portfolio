@@ -388,12 +388,12 @@ const handleCardClick = (experience) => {
 // 이미지 매핑 함수
 const getExperienceImage = (company) => {
   const imageMap = {
-    '호남대학교 전자공학과': '/honam.jpg',
-    'KT&G 상상 마케팅 스쿨': '/kt&g.png',
-    'PAS팀 베트남 해외 교육 봉사': '/pasteam.JPG',
-    '교내 세계시민성 프로그램': '/singapo.jpg',
-    'Google AI Essentials': '/google.png',
-    'SSAFY': '/ssafy.png'
+    '호남대학교 전자공학과': '/portfolio/honam.jpg',
+    'KT&G 상상 마케팅 스쿨': '/portfolio/kt&g.png',
+    'PAS팀 베트남 해외 교육 봉사': '/portfolio/pasteam.JPG',
+    '교내 세계시민성 프로그램': '/portfolio/singapo.jpg',
+    'Google AI Essentials': '/portfolio/google.png',
+    'SSAFY': '/portfolio/ssafy.png'
   }
   return imageMap[company] || null
 }
