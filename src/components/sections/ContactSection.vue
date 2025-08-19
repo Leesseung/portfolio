@@ -247,14 +247,10 @@ const handleSubmit = async () => {
       to_name: store.developer.name
     }
 
-    // EmailJS 전송 (환경변수 사용)
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    
-    if (!serviceId || !templateId || !publicKey) {
-      throw new Error('EmailJS 설정이 완료되지 않았습니다. .env 파일을 확인해주세요.')
-    }
+    // EmailJS 전송 (GitHub Pages용 하드코딩)
+    const serviceId = 'service_9reu9ty'
+    const templateId = 'template_ghp12uj'
+    const publicKey = 'rr59F45zfY2MN5SXp'
     
     // 실제 이메일 전송
     await emailjs.send(serviceId, templateId, templateParams, publicKey)
