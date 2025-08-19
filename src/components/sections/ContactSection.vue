@@ -256,13 +256,8 @@ const handleSubmit = async () => {
       throw new Error('EmailJS 설정이 완료되지 않았습니다. .env 파일을 확인해주세요.')
     }
     
+    // 실제 이메일 전송
     await emailjs.send(serviceId, templateId, templateParams, publicKey)
-    
-    // 실제 이메일 전송 (환경변수 설정 후 주석 해제)
-    // await emailjs.send(serviceId, templateId, templateParams, publicKey)
-    
-    // 임시로 시뮬레이션 (실제 EmailJS 설정 후 제거)
-    await new Promise(resolve => setTimeout(resolve, 2000))
     
     // 성공 메시지
     showSuccessMessage.value = true
