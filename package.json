@@ -2,6 +2,7 @@
   "name": "vue-portfolio",
   "version": "1.0.0",
   "description": "Vue 3 Developer Portfolio",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

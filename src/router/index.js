@@ -53,7 +53,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/portfolio/'),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
