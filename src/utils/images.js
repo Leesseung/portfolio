@@ -8,7 +8,7 @@ export const getImagePath = (imageName) => {
 // 프로젝트 이미지 매핑
 export const projectImages = {
   'edumeet.png': getImagePath('edumeet.png'),
-  'google.png': getImagePath('google.png'),
+  'bank.png': getImagePath('bank.png'),
   'ridar.jpg': getImagePath('ridar.jpg'),
   'protfolio.png': getImagePath('protfolio.png')
 }

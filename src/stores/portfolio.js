@@ -79,7 +79,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         id: 2,
         title: '편리한 금융을 위한 프로젝트',
         description: '예금·적금 상품 비교·추천 플랫폼과 OpenAI 기반 개인화 금융 챗봇 서비스',
-        image: 'google.png',
+        image: 'bank.png',
         technologies: ['Vue.js 3', 'Django REST Framework', 'OpenAI GPT-4', 'SQLite/PostgreSQL', 'JWT'],
         github: 'https://github.com/Leesseung/-pjt',
         live: null,
