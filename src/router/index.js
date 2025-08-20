@@ -66,7 +66,7 @@ const router = createRouter({
 
 // 페이지 제목 설정
 router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title} - 개발자 포트폴리오`
+  document.title = `${to.meta.title} - 이승민의 포트폴리오`
   next()
 })
 
