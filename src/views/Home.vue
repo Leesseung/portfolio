@@ -1,32 +1,32 @@
 <template>
-  <div class="pt-16">
+  <div class="scroll-snap-container pt-16">
     <!-- Hero Section -->
-    <div class="animate-on-scroll" data-section="hero">
+    <div class="scroll-snap-section animate-on-scroll" data-section="hero">
       <HeroSection />
     </div>
     
     <!-- About Section -->
-    <div class="animate-on-scroll" data-section="about">
+    <div class="scroll-snap-section animate-on-scroll" data-section="about">
       <AboutSection />
     </div>
     
     <!-- Skills Section -->
-    <div class="animate-on-scroll" data-section="skills">
+    <div class="scroll-snap-section animate-on-scroll" data-section="skills">
       <SkillsSection />
     </div>
     
     <!-- Projects Section -->
-    <div class="animate-on-scroll" data-section="projects">
+    <div class="scroll-snap-section animate-on-scroll" data-section="projects">
       <ProjectsSection />
     </div>
     
     <!-- Experience Section -->
-    <div class="animate-on-scroll" data-section="experience">
+    <div class="scroll-snap-section animate-on-scroll" data-section="experience">
       <ExperienceSection />
     </div>
     
     <!-- Contact Section -->
-    <div class="animate-on-scroll" data-section="contact">
+    <div class="scroll-snap-section animate-on-scroll" data-section="contact">
       <ContactSection />
     </div>
   </div>
@@ -92,6 +92,25 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+/* 스크롤 스냅 컨테이너 */
+.scroll-snap-container {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* 스크롤 스냅 섹션 */
+.scroll-snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+  position: relative;
+  /* 화면 비율 유지를 위한 설정 */
+  box-sizing: border-box;
+}
+
 /* Home 페이지 전용 스크롤 애니메이션 */
 .animate-on-scroll {
   opacity: 0;
@@ -182,8 +201,16 @@ onMounted(async () => {
   }
 }
 
-/* 반응형 애니메이션 조정 */
+/* 반응형 스크롤 스냅 조정 */
 @media (max-width: 768px) {
+  .scroll-snap-container {
+    scroll-snap-type: y mandatory;
+  }
+  
+  .scroll-snap-section {
+    min-height: 100vh;
+  }
+  
   .animate-on-scroll {
     transform: translateY(20px);
   }
@@ -192,5 +219,75 @@ onMounted(async () => {
   .slide-in-right {
     animation: fadeInUp 0.8s ease-out forwards;
   }
+}
+
+/* 스크롤 스냅 성능 최적화 */
+.scroll-snap-container {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59, 130, 246, 0.3) transparent;
+  /* 성능 최적화 */
+  will-change: scroll-position;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* 스크롤 스냅 시 부드러운 전환 */
+.scroll-snap-section {
+  transition: transform 0.3s ease-out;
+  /* 성능 최적화 */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* 스크롤 스냅 시 섹션별 미묘한 배경 효과 */
+.scroll-snap-section[data-section="hero"] {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.02) 0%, rgba(147, 51, 234, 0.02) 100%);
+}
+
+.scroll-snap-section[data-section="about"] {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.02) 0%, rgba(59, 130, 246, 0.02) 100%);
+}
+
+.scroll-snap-section[data-section="skills"] {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.02) 0%, rgba(16, 185, 129, 0.02) 100%);
+}
+
+.scroll-snap-section[data-section="projects"] {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.02) 0%, rgba(245, 158, 11, 0.02) 100%);
+}
+
+.scroll-snap-section[data-section="experience"] {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.02) 0%, rgba(239, 68, 68, 0.02) 100%);
+}
+
+.scroll-snap-section[data-section="contact"] {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.02) 0%, rgba(16, 185, 129, 0.02) 100%);
+}
+
+/* 다크모드에서의 배경 효과 */
+.dark .scroll-snap-section[data-section="hero"] {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+}
+
+.dark .scroll-snap-section[data-section="about"] {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+}
+
+.dark .scroll-snap-section[data-section="skills"] {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+}
+
+.dark .scroll-snap-section[data-section="projects"] {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);
+}
+
+.dark .scroll-snap-section[data-section="experience"] {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.05) 0%, rgba(239, 68, 68, 0.05) 100%);
+}
+
+.dark .scroll-snap-section[data-section="contact"] {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
 }
 </style>
