@@ -12,15 +12,15 @@
 
         <!-- 데스크톱 메뉴 -->
         <div class="hidden md:flex items-center space-x-8">
-          <a 
+          <router-link 
             v-for="item in menuItems" 
             :key="item.path"
-            :href="item.anchor ? `#${item.anchor}` : item.path"
-            @click="handleNavigation(item)"
-            class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium cursor-pointer"
+            :to="item.path"
+            class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium"
+            :class="{ 'text-primary-600 dark:text-primary-400': $route.path === item.path }"
           >
             {{ item.name }}
-          </a>
+          </router-link>
         </div>
 
         <!-- 우측 버튼들 -->
@@ -57,15 +57,16 @@
       >
         <div v-if="isMobileMenuOpen" class="md:hidden border-t border-gray-200 dark:border-dark-700">
           <div class="px-4 py-4 space-y-2">
-            <a
+            <router-link
               v-for="item in menuItems"
               :key="item.path"
-              :href="item.anchor ? `#${item.anchor}` : item.path"
-              @click="handleMobileNavigation(item)"
-              class="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-800 transition-colors duration-200 font-medium cursor-pointer"
+              :to="item.path"
+              @click="closeMobileMenu"
+              class="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-800 transition-colors duration-200 font-medium"
+              :class="{ 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400': $route.path === item.path }"
             >
               {{ item.name }}
-            </a>
+            </router-link>
           </div>
         </div>
       </transition>
@@ -82,12 +83,12 @@ const store = usePortfolioStore()
 const isMobileMenuOpen = ref(false)
 
 const menuItems = [
-  { name: '홈', path: '/', anchor: 'hero' },
-  { name: '소개', path: '/', anchor: 'about' },
-  { name: '기술 스택', path: '/', anchor: 'skills' },
-  { name: '프로젝트', path: '/', anchor: 'projects' },
-  { name: '이력', path: '/', anchor: 'experience' },
-  { name: '연락처', path: '/', anchor: 'contact' }
+  { name: '홈', path: '/' },
+  { name: '소개', path: '/about' },
+  { name: '기술 스택', path: '/skills' },
+  { name: '프로젝트', path: '/projects' },
+  { name: '이력', path: '/experience' },
+  { name: '연락처', path: '/contact' }
 ]
 
 const toggleDarkMode = () => {
@@ -101,24 +102,5 @@ const toggleMobileMenu = () => {
 
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
-}
-
-// 스크롤 스냅 네비게이션 처리
-const handleNavigation = (item) => {
-  if (item.anchor) {
-    const targetSection = document.querySelector(`[data-section="${item.anchor}"]`)
-    if (targetSection) {
-      targetSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      })
-    }
-  }
-}
-
-// 모바일 네비게이션 처리
-const handleMobileNavigation = (item) => {
-  closeMobileMenu()
-  handleNavigation(item)
 }
 </script>
