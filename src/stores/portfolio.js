@@ -8,7 +8,7 @@ export const usePortfolioStore = defineStore('portfolio', {
     // 개발자 정보
     developer: {
       name: '이승민',
-      title: 'Frontend Developer',
+      title: 'Pull Stack Developer',
       email: 'lsm122500@naver.com',
       location: '광주 광역시 광산구, 대한민국',
       bio: '창의적이고 사용자 중심의 웹 애플리케이션을 개발하는 것을 좋아하는 개발자입니다. 최신 기술 트렌드를 학습하고 적용하는 것에 열정을 가지고 있습니다.',
