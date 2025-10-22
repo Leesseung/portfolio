@@ -45,7 +45,7 @@
           <!-- 플로팅 카드들 -->
           <div class="absolute -top-4 -right-4 bg-yellow-400 rounded-lg p-4 shadow-lg floating-card animate-on-scroll" data-delay="0.9">
             <div class="text-center">
-              <div class="text-2xl font-bold text-white">프론트</div>
+              <div class="text-2xl font-bold text-white">풀스택</div>
               <div class="text-xs text-white">개발자</div>
             </div>
           </div>
